@@ -304,6 +304,7 @@ h6 {
 
 .social-links a {
   color: var(--mainText);
+  padding: 0 25px;
 }
 
 .social-links a span {
@@ -406,6 +407,9 @@ h6 {
 }
 
 @media screen and (max-width: 800px) {
+  .main-container {
+    width: 95%;
+  }
   .intro-wrapper {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -419,10 +423,9 @@ h6 {
   .about-wrapper {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "about-me" "mySkills"
+      "about-me"
+      "mySkills"
       "social-links";
     gap: 30px;
-
-    padding: 20px 0;
   }
 }
