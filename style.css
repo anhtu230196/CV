@@ -57,6 +57,9 @@ strong {
   background-color: white;
   color: black;
   padding: 5px;
+  border: none;
+  width: 50px;
+  margin: 0 5px;
 }
 
 p,
@@ -535,9 +538,4 @@ h6 {
   text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
   /* transform: rotate(-7deg); */
    z-index:1000
-}
-
-.yes-button {
-  margin-right: 10px;
-  border: 1px solid pink;
 }
