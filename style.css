@@ -52,7 +52,7 @@ strong {
   border-radius: 5px;
 }
 
-button {
+a {
   cursor: pointer;
   background-color: white;
   color: black;
@@ -416,6 +416,8 @@ h6 {
 #submit-btn {
   margin-top: 10px;
   width: 100%;
+
+
   padding: 10px 0;
   color: #fff;
   background-color: var(--buttonColor);
