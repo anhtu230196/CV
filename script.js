@@ -1,33 +1,19 @@
-let themeDots = document.getElementsByClassName("theme-dot");
-let theme = localStorage.getItem("theme");
+const backdrop = document.getElementsByClassName('backdrop')
+const modal = document.getElementById('modal')
+const yesButton = document.querySelector('.yes-button')
+const noButton = document.querySelector('.no-button')
 
-if (theme == null) {
-  setTheme("light");
-} else {
-  setTheme(theme);
-}
+const heartContainer = document.querySelector('.heart-content')
 
-for (let i = 0; i < themeDots.length; i++) {
-  themeDots[i].addEventListener("click", function () {
-    let mode = this.dataset.mode;
-    console.log("click:", mode);
-    setTheme(mode);
-  });
-}
+yesButton.addEventListener('click', function(){
+  modal.style.visibility = 'hidden'
+  heartContainer.classList.add('active')
+})
 
-function setTheme(mode) {
-  if (mode === "light") {
-    document.getElementById("theme-style").href = "style.css";
-  }
-  if (mode === "blue") {
-    document.getElementById("theme-style").href = "blue.css";
-  }
-  if (mode === "green") {
-    document.getElementById("theme-style").href = "green.css";
-  }
-  if (mode === "purple") {
-    document.getElementById("theme-style").href = "purple.css";
-  }
-
-  localStorage.setItem("theme", mode);
-}
+noButton.addEventListener('mouseover', function(){
+  const randomHeight = Math.floor(Math.random() * 40) + 30
+  const randomWidth = Math.floor(Math.random() * 40) + 30
+  console.log(randomHeight)
+  modal.style.top = `${randomHeight}%`
+  modal.style.left = `${randomWidth}%`
+})

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anthony Vincent</title>
+    <title>Heart</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap"
@@ -24,147 +24,249 @@
     <link rel="stylesheet" id="theme-style" href="" />
   </head>
   <body>
-    <section class="s1">
-      <div class="main-container">
-        <div class="greeting-wrapper">
-          <h1>Hi, I'm Anthony Vincent</h1>
-        </div>
-
-        <div class="intro-wrapper">
-          <div class="nav-wrapper">
-            <div class="dots-wrapper">
-              <div id="dot-1" class="browser-dot"></div>
-              <div id="dot-2" class="browser-dot"></div>
-              <div id="dot-3" class="browser-dot"></div>
-            </div>
-            <ul id="navigation">
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-          <div class="left-column">
-            <img id="profile_pic" src="img/anhtu.jpg" alt="" />
-            <h5 style="text-align: center; line-height: 0">
-              Personalize Theme
-            </h5>
-
-            <div id="theme-options-wrapper">
-              <div data-mode="light" id="light-mode" class="theme-dot"></div>
-              <div data-mode="blue" id="blue-mode" class="theme-dot"></div>
-              <div data-mode="green" id="green-mode" class="theme-dot"></div>
-              <div data-mode="purple" id="purple-mode" class="theme-dot"></div>
-            </div>
-
-            <p id="settings-note">
-              *** Theme settings will be saved for <br />
-              your next visit
-            </p>
-          </div>
-          <div class="right-column">
-            <div id="preview-shadow">
-              <div id="preview">
-                <div id="corner-tl" class="corner"></div>
-                <div id="corner-tr" class="corner"></div>
-                <h3>What I Do</h3>
-                <p>I work as a Front-end Developer</p>
-                <div id="corner-bl" class="corner"></div>
-                <div id="corner-br" class="corner"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="backdrop">
+      <div class="modal" id="modal">
+        <p>Do you love me?</p>
+        <button class="yes-button">Yes</button>
+        <button class="no-button">No</button>
       </div>
-    </section>
-    <section class="s2">
-      <div class="main-container">
-        <div class="about-wrapper">
-          <div class="about-me">
-            <h4>More about me</h4>
-            <div class="about-me-info">
-              <p>
-                Courteous and enthusiastic, I am interested in IT and everything
-                in its orbit.
-              </p>
-              <p>
-                I am looking for a chance to increase skills in Computer
-                Science. I would offer my full commitment, and be a pleasant and
-                friendly addition to your team.
-              </p>
-              <p>
-                I am therefore currently looking for a job as a front-end
-                developer.
-              </p>
-            </div>
-          </div>
-          <div class="mySkills">
-            <div>
-              <h4>MY SKILLS</h4>
-              <p>
-                Front-end Developer with primary focus on ReactJs:
-                <br />
-                <a target="_blank" href="VuAnhTu-CV.pdf">My CV here</a>
-              </p>
-            </div>
-            <div id="skills">
-              <ul>
-                <li>ReactJS, Redux</li>
-                <li>Angular</li>
-                <li>Javascript</li>
-              </ul>
-              <ul>
-                <li>Git</li>
-                <li>HTML/CSS</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    </div>  
+  
+    <div class="heart-content">
+      <h1 class="name">I Love U too</h1>
+      <div class="box">
+        <canvas id="pinkboard"></canvas>
       </div>
-    </section>
-    <!-- <section class="s1">
-      <div class="main-container">
-        <h3 style="text-align: center">Some of my projects</h3>
-        <div class="post-wrapper">
-          <div class="post">
-            <img class="thumbnail" src="img/anhtu.jpg" alt="" />
-            <div class="post-preview">
-              <h6 class="post-title">Post Title</h6>
-              <p class="post-intro">This is a sentence. Some more text</p>
-              <a href="post.html">Read more</a>
-            </div>
-          </div>
-
-          <div class="post">
-            <img class="thumbnail" src="" alt="" />
-            <div class="post-preview">
-              <h6 class="post-title">Post Title</h6>
-              <p class="post-intro">This is a sentence. Some more text</p>
-              <a href="">Read more</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <section class="s1">
-      <div class="main-container">
-        <h3 style="text-align: center">Contact</h3>
-
-        <form id="contact-form">
-          <label>Name</label>
-          <input class="input-field" type="text" name="name" />
-
-          <label>Subject</label>
-          <input class="input-field" type="text" name="subject" />
-
-          <label>Email</label>
-          <input class="input-field" type="text" name="email" />
-
-          <label>Message</label>
-          <textarea class="input-field" name="message"></textarea>
-
-          <input id="submit-btn" type="submit" value="Send" />
-        </form>
-      </div>
-    </section>
-
+    </div>
+  
+    <script>
+  var settings = {
+    particles: {
+      length:   10000, // maximum amount of particles
+      duration:   4, // particle duration in sec
+      velocity: 80, // particle velocity in pixels/sec
+      effect: -1.3, // play with this for a nice effect
+      size:      8, // particle size in pixels
+    },
+  };
+  /*
+  */
+  (function(){var b=0;var c=["ms","moz","webkit","o"];for(var a=0;a<c.length&&!window.requestAnimationFrame;++a){window.requestAnimationFrame=window[c[a]+"RequestAnimationFrame"];window.cancelAnimationFrame=window[c[a]+"CancelAnimationFrame"]||window[c[a]+"CancelRequestAnimationFrame"]}if(!window.requestAnimationFrame){window.requestAnimationFrame=function(h,e){var d=new Date().getTime();var f=Math.max(0,16-(d-b));var g=window.setTimeout(function(){h(d+f)},f);b=d+f;return g}}if(!window.cancelAnimationFrame){window.cancelAnimationFrame=function(d){clearTimeout(d)}}}());
+  /*
+  * Point class
+  */
+  var Point = (function() {
+    function Point(x, y) {
+      this.x = (typeof x !== 'undefined') ? x : 0;
+      this.y = (typeof y !== 'undefined') ? y : 0;
+    }
+    Point.prototype.clone = function() {
+      return new Point(this.x, this.y);
+    };
+    Point.prototype.length = function(length) {
+      if (typeof length == 'undefined')
+        return Math.sqrt(this.x * this.x + this.y * this.y);
+      this.normalize();
+      this.x *= length;
+      this.y *= length;
+      return this;
+    };
+    Point.prototype.normalize = function() {
+      var length = this.length();
+      this.x /= length;
+      this.y /= length;
+      return this;
+    };
+    return Point;
+  })();
+  /*
+  * Particle class
+  */
+  var Particle = (function() {
+    function Particle() {
+      this.position = new Point();
+      this.velocity = new Point();
+      this.acceleration = new Point();
+      this.age = 0;
+    }
+    Particle.prototype.initialize = function(x, y, dx, dy) {
+      this.position.x = x;
+      this.position.y = y;
+      this.velocity.x = dx;
+      this.velocity.y = dy;
+      this.acceleration.x = dx * settings.particles.effect;
+      this.acceleration.y = dy * settings.particles.effect;
+      this.age = 0;
+    };
+    Particle.prototype.update = function(deltaTime) {
+      this.position.x += this.velocity.x * deltaTime;
+      this.position.y += this.velocity.y * deltaTime;
+      this.velocity.x += this.acceleration.x * deltaTime;
+      this.velocity.y += this.acceleration.y * deltaTime;
+      this.age += deltaTime;
+    };
+    Particle.prototype.draw = function(context, image) {
+      function ease(t) {
+        return (--t) * t * t + 1;
+      }
+      var size = image.width * ease(this.age / settings.particles.duration);
+      context.globalAlpha = 1 - this.age / settings.particles.duration;
+      context.drawImage(image, this.position.x - size / 2, this.position.y - size / 2, size, size);
+    };
+    return Particle;
+  })();
+  /*
+  * ParticlePool class
+  */
+  var ParticlePool = (function() {
+    var particles,
+        firstActive = 0,
+        firstFree   = 0,
+        duration    = settings.particles.duration;
+  
+    function ParticlePool(length) {
+      // create and populate particle pool
+      particles = new Array(length);
+      for (var i = 0; i < particles.length; i++)
+        particles[i] = new Particle();
+    }
+    ParticlePool.prototype.add = function(x, y, dx, dy) {
+      particles[firstFree].initialize(x, y, dx, dy);
+    
+      // handle circular queue
+      firstFree++;
+      if (firstFree   == particles.length) firstFree   = 0;
+      if (firstActive == firstFree       ) firstActive++;
+      if (firstActive == particles.length) firstActive = 0;
+    };
+    ParticlePool.prototype.update = function(deltaTime) {
+      var i;
+    
+      // update active particles
+      if (firstActive < firstFree) {
+        for (i = firstActive; i < firstFree; i++)
+          particles[i].update(deltaTime);
+      }
+      if (firstFree < firstActive) {
+        for (i = firstActive; i < particles.length; i++)
+          particles[i].update(deltaTime);
+        for (i = 0; i < firstFree; i++)
+          particles[i].update(deltaTime);
+      }
+    
+      // remove inactive particles
+      while (particles[firstActive].age >= duration && firstActive != firstFree) {
+        firstActive++;
+        if (firstActive == particles.length) firstActive = 0;
+      }
+    
+    
+    };
+    ParticlePool.prototype.draw = function(context, image) {
+      // draw active particles
+      if (firstActive < firstFree) {
+        for (i = firstActive; i < firstFree; i++)
+          particles[i].draw(context, image);
+      }
+      if (firstFree < firstActive) {
+        for (i = firstActive; i < particles.length; i++)
+          particles[i].draw(context, image);
+        for (i = 0; i < firstFree; i++)
+          particles[i].draw(context, image);
+      }
+    };
+    return ParticlePool;
+  })();
+  /*
+  * Putting it all together
+  */
+  (function(canvas) {
+    var context = canvas.getContext('2d'),
+        particles = new ParticlePool(settings.particles.length),
+        particleRate = settings.particles.length / settings.particles.duration, // particles/sec
+        time;
+  
+    // get point on heart with -PI <= t <= PI
+    function pointOnHeart(t) {
+      return new Point(
+        160 * Math.pow(Math.sin(t), 3),
+        130 * Math.cos(t) - 50 * Math.cos(2 * t) - 20 * Math.cos(3 * t) - 10 * Math.cos(4 * t) + 25
+      );
+    }
+  
+    // creating the particle image using a dummy canvas
+    var image = (function() {
+      var canvas  = document.createElement('canvas'),
+          context = canvas.getContext('2d');
+      canvas.width  = settings.particles.size;
+      canvas.height = settings.particles.size;
+      // helper function to create the path
+      function to(t) {
+        var point = pointOnHeart(t);
+        point.x = settings.particles.size / 2 + point.x * settings.particles.size / 350;
+        point.y = settings.particles.size / 2 - point.y * settings.particles.size / 350;
+        return point;
+      }
+      // create the path
+      context.beginPath();
+      var t = -Math.PI;
+      var point = to(t);
+      context.moveTo(point.x, point.y);
+      while (t < Math.PI) {
+        t += 0.01; // baby steps!
+        point = to(t);
+        context.lineTo(point.x, point.y);
+      }
+      context.closePath();
+      // create the fill
+      context.fillStyle = '#FF99FF';
+      context.fill();
+      // create the image
+      var image = new Image();
+      image.src = canvas.toDataURL();
+      return image;
+    })();
+  
+    // render that thing!
+    function render() {
+      // next animation frame
+      requestAnimationFrame(render);
+    
+      // update time
+      var newTime   = new Date().getTime() / 1000,
+          deltaTime = newTime - (time || newTime);
+      time = newTime;
+    
+      // clear canvas
+      context.clearRect(0, 0, canvas.width, canvas.height);
+    
+      // create new particles
+      var amount = particleRate * deltaTime;
+      for (var i = 0; i < amount; i++) {
+        var pos = pointOnHeart(Math.PI - 2 * Math.PI * Math.random());
+        var dir = pos.clone().length(settings.particles.velocity);
+        particles.add(canvas.width / 2 + pos.x, canvas.height / 2 - pos.y, dir.x, -dir.y);
+      }
+    
+      // update and draw particles
+      particles.update(deltaTime);
+      particles.draw(context, image);
+    }
+  
+    // handle (re-)sizing of the canvas
+    function onResize() {
+      canvas.width  = canvas.clientWidth;
+      canvas.height = canvas.clientHeight;
+    }
+    window.onresize = onResize;
+  
+    // delay rendering bootstrap
+    setTimeout(function() {
+      onResize();
+      render();
+    }, 10);
+  })(document.getElementById('pinkboard'));
+    </script>   
     <script src="./script.js"></script>
   </body>
 </html>
