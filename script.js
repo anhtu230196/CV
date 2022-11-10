@@ -6,7 +6,7 @@ const noButton = document.querySelector('.no-button')
 const heartContainer = document.querySelector('.heart-content')
 
 yesButton.addEventListener('click', function(){
-  window.location = '/heart.html'
+  // window.location = '/heart.html'
 })
 
 noButton.addEventListener('mouseover', function(){
